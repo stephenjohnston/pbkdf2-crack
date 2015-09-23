@@ -1,6 +1,6 @@
 # pbkdf2-crack
 
-This library is a clojure port of Seafoodbuffet's [iOSRestrictionsExtractor](https://github.com/seafoodbuffet/iOSRestrictionsExtractor) used to recover an iOS restrictions passcode. More details can be found on [ios-recover-restrictions-passcode](http://blog.barelycode.com//2015/09/22/ios-recover-restrictions-passcode/)
+This program is a clojure tool to recover an iOS restrictions passcode.  The idea came from Seafoodbuffet's blog post [ios-recover-restrictions-passcode](http://blog.barelycode.com//2015/09/22/ios-recover-restrictions-passcode/).
 
 This project was just for fun to see what the clojure equivalent might look like and to see how fast it runs.
 To recover '0001', it takes about 80 milliseconds, and about 20 to 30 seconds to recover '9999'.
