@@ -13,5 +13,5 @@
 
 
 (deftest test-with-unknown-key
-  (testing "Test to see that a passcode outside the range of 0000 to 9999 results in an empty list"
-    (is (empty? (brute-force-cracker "A+g=$k66pDaGZf24=$xxxkGYtjuG+r7zNMzGyzxTL8MeE=")))))
+  (testing "Test to see that a passcode outside the range of 0000 to 9999 results in nil"
+    (is (nil? (brute-force-cracker "A+g=$k66pDaGZf24=$xxxkGYtjuG+r7zNMzGyzxTL8MeE=")))))
