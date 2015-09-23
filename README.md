@@ -9,8 +9,8 @@ This implementation was made simple by using [weavejester's](https://github.com/
 
 ## Usage
 
-    lein run 'A+g=$aSbUXg==$M/p4734c8/SOXZnGgZot+BciAW0='
-
+    $ lein run 'A+g=$aSbUXg==$M/p4734c8/SOXZnGgZot+BciAW0='
+    Crack result: {:result true, :value "0001"}
 ## License
 
 Copyright © 2015 
