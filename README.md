@@ -5,7 +5,7 @@ This program is a clojure tool to recover an iOS restrictions passcode.  The ide
 This project was just for fun to see what the clojure equivalent might look like and to see how fast it runs.
 To recover '0001', it takes about 80 milliseconds, and about 20 to 30 seconds to recover '9999'.
 
-This implementation was made simple by using [weavejester's](https://github.com/weavejester) [crypto-password](https://github.com/weavejester/crypto-password).
+This implementation was made simple by using [weavejester's](https://github.com/weavejester) [crypto-password](https://github.com/weavejester/crypto-password) library.
 
 ## Usage
 
