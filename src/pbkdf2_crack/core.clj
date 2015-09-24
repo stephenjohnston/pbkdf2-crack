@@ -29,20 +29,24 @@
   [hash]
   (if (or (not (instance? String hash))
           (not (= (count (re-seq (re-pattern "\\$") hash)) 2)))
-    (throw (IllegalArgumentException. "parameter hash must be a string of the form <base64iterations>$<base64salt>$<encryptedpassword>"))
+    (throw (IllegalArgumentException. 
+            "parameter hash must be a string of \\
+             the form <base64iterations>$<base64salt>$<encryptedpassword>"))
     ;; Thread the numbers thru as the last argument to each of the functions
-    ;; in the chain below. Note that first will ensure that we compute only up to
-    ;; the first positive hit, and no more.
+    ;; in the chain below. Note that first will ensure that we compute only up 
+    ;; to the first positive hit, and no more.
     (->> (range 1 10000) 
          (zero-padded-list)
          (lazy-list-of-pbkdf2-checks hash)
          (drop-while #(false? (:result %1)))
-         (first)))) 
+         (first)
+         :value))) 
 
 (defn -main
-  "Using Leiningen, run lein run '<base64iterations>$<base64salt>$<encryptedpassword>'
-   Example: lein run 'A+g=$aSbUXg==$M/p4734c8/SOXZnGgZot+BciAW0='"
+  "Example run using Leiningen:
+   lein run 'A+g=$aSbUXg==$M/p4734c8/SOXZnGgZot+BciAW0='"
   [& args]
   (if (not (= (count args) 1))
-    (println "Usage: lein run '<base64iterations>$<base64salt>$<encryptedpassword>'")
+    (println "Usage: lein run \\
+              '<base64iterations>$<base64salt>$<encryptedpassword>'")
     (println "Crack result: " (brute-force-cracker (first args)))))
